@@ -15,4 +15,19 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <com.android.settings.preference.SecureSettingSwitchPreference
+        android:key="advanced_reboot"
+        android:summary="@string/advanced_reboot_summary"
+        android:title="@string/advanced_reboot_title" />
+	
+    <PreferenceScreen
+        android:key="expanded_desktop"
+        android:title="@string/power_menu_expanded_desktop"
+        android:fragment="com.android.settings.applications.ExpandedDesktopPreferenceFragment" />
+	
+    <PreferenceScreen
+        android:key="recent_tweaks"
+        android:title="@string/recent_tweaks_title"
+        android:fragment="com.android.settings.vanilla.RecentTweaks" />
+	
 </PreferenceScreen>
