@@ -163,4 +163,5 @@ public class Settings extends SettingsActivity {
     // Vanilla Additions.
     public static class SubstratumActivity extends SettingsActivity { /* empty */ }
     public static class VanillaTweaksActivity extends SettingsActivity { /* empty */ }
+    public static class ExpandedDesktopSettingsActivity extends SettingsActivity { /* empty */ }
 }
