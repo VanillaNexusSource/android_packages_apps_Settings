@@ -19,7 +19,7 @@
         android:key="advanced_reboot"
         android:summary="@string/advanced_reboot_summary"
         android:title="@string/advanced_reboot_title" />
-	
+
     <PreferenceScreen
         android:key="expanded_desktop"
         android:title="@string/power_menu_expanded_desktop"

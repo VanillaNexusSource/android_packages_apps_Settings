@@ -117,7 +117,6 @@
     <string name="dnd_tweaks_title">Do Not Disturb Tweaks</string>
     <string name="notification_tweaks_title">Notification Tweaks</string>
     <string name="other_tweaks_title">Other Tweaks</string>
-    <string name="other_tweaks_summary">Nothing to see here</string>
 	
     <!-- Nav Bar Tweaks-->
     <string name="navbar_tuner_title">Navigation bar tuner</string>
@@ -231,5 +230,9 @@
     <!-- Lock screen vibrate settings -->
     <string name="lockscreen_vibrate_enabled_title">Vibrate</string>
     <string name="lockscreen_vibrate_enabled_head">Vibrate when unlocking</string>
+	
+    <!-- Advanced reboot options -->
+    <string name="advanced_reboot_title">Advanced reboot</string>
+    <string name="advanced_reboot_summary">When unlocked, include options in the power menu for rebooting into recovery, bootloader or performing a soft reboot</string>
 
 </resources>

@@ -43,7 +43,6 @@
     <PreferenceScreen
         android:fragment="com.android.settings.vanilla.OtherTweaks"
         android:key="vanilla_other_tweaks"
-        android:title="@string/other_tweaks_title"
-        android:summary="@string/other_tweaks_summary"/>
+        android:title="@string/other_tweaks_title"/>
 	
 </PreferenceScreen>
