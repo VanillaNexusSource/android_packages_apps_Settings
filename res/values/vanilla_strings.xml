@@ -96,5 +96,10 @@
     <string name="reset">Reset</string>
     <string name="add">Add</string>
     <string name="choose_app">Choose app</string>
+	
+    <!-- Vanilla Tweaks -->
+    <string name="vanilla_tweaks_title">Vanilla Tweaks</string>
+    <string name="keywords_vanilla_tweaks">statusbar navigation bar DND other</string>
+	
 </resources>
 

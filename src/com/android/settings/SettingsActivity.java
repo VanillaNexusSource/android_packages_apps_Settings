@@ -121,6 +121,7 @@ import com.android.settings.search.Index;
 import com.android.settings.sim.SimSettings;
 import com.android.settings.tts.TextToSpeechSettings;
 import com.android.settings.users.UserSettings;
+import com.android.settings.vanilla.VanillaTweaks;
 import com.android.settings.vpn2.VpnSettings;
 import com.android.settings.wfd.WifiDisplaySettings;
 import com.android.settings.widget.SwitchBar;
@@ -257,6 +258,7 @@ public class SettingsActivity extends SettingsDrawerActivity
             Settings.AccountSettingsActivity.class.getName(),
             //system_section
             Settings.DateTimeSettingsActivity.class.getName(),
+            Settings.VanillaTweaksActivity.class.getName(),
             Settings.DeviceInfoSettingsActivity.class.getName(),
             Settings.AccessibilitySettingsActivity.class.getName(),
             Settings.PrintSettingsActivity.class.getName(),
@@ -324,6 +326,7 @@ public class SettingsActivity extends SettingsDrawerActivity
             PhysicalKeyboardFragment.class.getName(),
             ZenModeSettings.class.getName(),
             SoundSettings.class.getName(),
+            VanillaTweaks.class.getName(),
             ConfigureNotificationSettings.class.getName(),
             ChooseLockPassword.ChooseLockPasswordFragment.class.getName(),
             ChooseLockPattern.ChooseLockPatternFragment.class.getName(),
