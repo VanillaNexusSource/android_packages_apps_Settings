@@ -100,6 +100,7 @@
     <!-- Vanilla Tweaks -->
     <string name="vanilla_tweaks_title">Vanilla Tweaks</string>
     <string name="keywords_vanilla_tweaks">statusbar navigation bar DND other</string>
+    <string name="navbar_settings_title">Navigation Bar</string>
 	
 </resources>
 
