@@ -101,6 +101,6 @@
     <string name="vanilla_tweaks_title">Vanilla Tweaks</string>
     <string name="keywords_vanilla_tweaks">statusbar navigation bar DND other</string>
     <string name="navbar_settings_title">Navigation Bar</string>
-	
+    <string name="statusbar_settings_title">Statusbar</string>
 </resources>
 
