@@ -220,6 +220,17 @@
         <item>@string/expanded_hide_status</item>
         <item>@string/expanded_hide_navigation</item>
     </string-array>
+    
+    <!-- Screen record chord behavior -->
+    <string-array name="screen_record_chord_entries" translatable="false">
+        <item>@string/screen_record_chord_screenrecord</item>
+        <item>@string/screen_record_chord_selscreenshot</item>
+    </string-array>
+
+    <string-array name="screen_record_chord_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
 
     <string-array name="expanded_desktop_values" translatable="false">
         <item>0</item>

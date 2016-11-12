@@ -16,7 +16,12 @@
 
 package com.android.settings.vanilla;
 
+import android.content.ContentResolver;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.support.v7.preference.ListPreference;
+import android.support.v7.preference.Preference;
+import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v7.preference.PreferenceScreen;
 
 import com.android.internal.logging.MetricsProto.MetricsEvent;
@@ -24,18 +29,53 @@ import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class OtherTweaks extends SettingsPreferenceFragment {
+public class OtherTweaks extends SettingsPreferenceFragment implements
+ Preference.OnPreferenceChangeListener {
+    
+    private static final String SCREENRECORD_CHORD_TYPE = "screenrecord_chord_type";
+    
+    private ListPreference mScreenrecordChordType;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.other_tweaks);
         PreferenceScreen prefScreen = getPreferenceScreen();
+    
+        int recordChordValue = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.SCREENRECORD_CHORD_TYPE, 0);
+        mScreenrecordChordType = initActionList(SCREENRECORD_CHORD_TYPE,
+                recordChordValue);
     }
 
     @Override
     protected int getMetricsCategory() {
         return MetricsEvent.VANILLA;
+    }
+
+    private ListPreference initActionList(String key, int value) {
+        ListPreference list = (ListPreference) getPreferenceScreen().findPreference(key);
+        list.setValue(Integer.toString(value));
+        list.setSummary(list.getEntry());
+        list.setOnPreferenceChangeListener(this);
+        return list;
+}
+     
+    private void handleActionListChange(ListPreference pref, Object newValue, String setting) {
+        String value = (String) newValue;
+        int index = pref.findIndexOfValue(value);
+        pref.setSummary(pref.getEntries()[index]);
+        Settings.System.putInt(getActivity().getContentResolver(), setting, Integer.valueOf(value));
+}
+     
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mScreenrecordChordType) {
+            handleActionListChange(mScreenrecordChordType, newValue,
+                    Settings.System.SCREENRECORD_CHORD_TYPE);
+            return true;
+        }
+        return false;
     }
 }
 

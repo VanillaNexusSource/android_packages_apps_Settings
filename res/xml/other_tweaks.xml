@@ -29,5 +29,11 @@
         android:key="recent_tweaks"
         android:title="@string/recent_tweaks_title"
         android:fragment="com.android.settings.vanilla.RecentTweaks" />
+    
+    <ListPreference
+        android:key="screenrecord_chord_type"
+        android:title="@string/screen_record_chord_title"
+        android:entries="@array/screen_record_chord_entries"
+        android:entryValues="@array/screen_record_chord_values" />
 
 </PreferenceScreen>
