@@ -37,6 +37,8 @@ import android.provider.Settings;
 
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 
+import com.android.settings.preference.CustomSeekBarPreference;
+
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
@@ -46,12 +48,14 @@ import java.util.ArrayList;
 
 public class QSTweaks extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
+    private static final String PREF_COLUMNS = "qs_layout_columns";
     private static final String CATEGORY_WEATHER = "weather_category";
     private static final String WEATHER_ICON_PACK = "weather_icon_pack";
     private static final String DEFAULT_WEATHER_ICON_PACKAGE = "org.omnirom.omnijaws";
     private static final String WEATHER_SERVICE_PACKAGE = "org.omnirom.omnijaws";
     private static final String CHRONUS_ICON_PACK_INTENT = "com.dvtonder.chronus.ICON_PACK";
 
+    private CustomSeekBarPreference mQsColumns;
     private ListPreference mWeatherIconPack;
     private PreferenceCategory mWeatherCategory;
 
@@ -60,6 +64,12 @@ public class QSTweaks extends SettingsPreferenceFragment implements OnPreference
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.qs_tweaks);
         PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mQsColumns = (CustomSeekBarPreference) findPreference(PREF_COLUMNS);
+        int columnsQs = Settings.System.getInt(getContentResolver(),
+                Settings.System.QS_LAYOUT_COLUMNS, 3);
+        mQsColumns.setValue(columnsQs / 1);
+        mQsColumns.setOnPreferenceChangeListener(this);
 
         mWeatherCategory = (PreferenceCategory) findPreference(CATEGORY_WEATHER);
         if (mWeatherCategory != null && !isOmniJawsServiceInstalled()) {
@@ -99,7 +109,12 @@ public class QSTweaks extends SettingsPreferenceFragment implements OnPreference
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
-        if (preference == mWeatherIconPack) {
+        if (preference == mQsColumns) {
+            int qsColumns = (Integer) objValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.QS_LAYOUT_COLUMNS, qsColumns * 1);
+            return true;
+        } else if (preference == mWeatherIconPack) {
             String value = (String) objValue;
             Settings.System.putString(getContentResolver(),
                     Settings.System.OMNIJAWS_WEATHER_ICON_PACK, value);

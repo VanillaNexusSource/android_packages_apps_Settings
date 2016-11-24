@@ -274,4 +274,8 @@
     <string name="header_weather_title">Header view weather</string>
     <string name="header_weather_summary">Enable notification panel header weather display</string>
     <string name="weather_icon_pack_title">Condition icon pack</string>
+
+    <!-- QS customization -->
+    <string name="qs_panel_title">Quick settings panel</string>
+    <string name="qs_columns_title">Columns</string>
 </resources>
