@@ -49,6 +49,8 @@ import java.util.ArrayList;
 public class QSTweaks extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     private static final String PREF_COLUMNS = "qs_layout_columns";
+    private static final String PREF_ROWS_PORTRAIT = "qs_rows_portrait";
+    private static final String PREF_ROWS_LANDSCAPE = "qs_rows_landscape";
     private static final String CATEGORY_WEATHER = "weather_category";
     private static final String WEATHER_ICON_PACK = "weather_icon_pack";
     private static final String DEFAULT_WEATHER_ICON_PACKAGE = "org.omnirom.omnijaws";
@@ -56,6 +58,8 @@ public class QSTweaks extends SettingsPreferenceFragment implements OnPreference
     private static final String CHRONUS_ICON_PACK_INTENT = "com.dvtonder.chronus.ICON_PACK";
 
     private CustomSeekBarPreference mQsColumns;
+    private CustomSeekBarPreference mRowsPortrait;
+    private CustomSeekBarPreference mRowsLandscape;
     private ListPreference mWeatherIconPack;
     private PreferenceCategory mWeatherCategory;
 
@@ -70,6 +74,19 @@ public class QSTweaks extends SettingsPreferenceFragment implements OnPreference
                 Settings.System.QS_LAYOUT_COLUMNS, 3);
         mQsColumns.setValue(columnsQs / 1);
         mQsColumns.setOnPreferenceChangeListener(this);
+
+        mRowsPortrait = (CustomSeekBarPreference) findPreference(PREF_ROWS_PORTRAIT);
+        int rowsPortrait = Settings.System.getInt(getContentResolver(),
+                Settings.System.QS_ROWS_PORTRAIT, 3);
+        mRowsPortrait.setValue(rowsPortrait / 1);
+        mRowsPortrait.setOnPreferenceChangeListener(this);
+
+        int defaultValue = getResources().getInteger(com.android.internal.R.integer.config_qs_num_rows_landscape_default);
+        mRowsLandscape = (CustomSeekBarPreference) findPreference(PREF_ROWS_LANDSCAPE);
+        int rowsLandscape = Settings.System.getInt(getContentResolver(),
+                Settings.System.QS_ROWS_LANDSCAPE, defaultValue);
+        mRowsLandscape.setValue(rowsLandscape / 1);
+        mRowsLandscape.setOnPreferenceChangeListener(this);
 
         mWeatherCategory = (PreferenceCategory) findPreference(CATEGORY_WEATHER);
         if (mWeatherCategory != null && !isOmniJawsServiceInstalled()) {
@@ -113,6 +130,16 @@ public class QSTweaks extends SettingsPreferenceFragment implements OnPreference
             int qsColumns = (Integer) objValue;
             Settings.System.putInt(getContentResolver(),
                     Settings.System.QS_LAYOUT_COLUMNS, qsColumns * 1);
+            return true;
+        } else if (preference == mRowsPortrait) {
+            int rowsPortrait = (Integer) objValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.QS_ROWS_PORTRAIT, rowsPortrait * 1);
+            return true;
+        } else if (preference == mRowsLandscape) {
+            int rowsLandscape = (Integer) objValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.QS_ROWS_LANDSCAPE, rowsLandscape * 1);
             return true;
         } else if (preference == mWeatherIconPack) {
             String value = (String) objValue;
