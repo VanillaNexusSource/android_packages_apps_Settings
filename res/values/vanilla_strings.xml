@@ -280,4 +280,7 @@
     <string name="qs_rows_portrait_title">Rows (portrait)</string>
     <string name="qs_rows_landscape_title">Rows (landscape)</string>
     <string name ="qs_quick_tiles_title">Header tile count</string>
+    
+    <!-- Summary text for double twist for camera mode  [CHAR LIMIT=160]-->
+    <string name="double_twist_for_camera_mode_summary_fix">To switch in and out of selfie mode in Google Camera, double-twist when you’re in the app</string>
 </resources>
