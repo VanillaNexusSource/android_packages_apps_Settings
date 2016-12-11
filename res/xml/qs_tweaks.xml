@@ -42,6 +42,14 @@
             settings:units=""
             android:persistent="false" />
 
+        <com.android.settings.preference.CustomSeekBarPreference
+            android:key="sysui_qqs_count_key"
+            android:title="@string/qs_quick_tiles_title"
+            android:max="8"
+            settings:min="3"
+            settings:units=""
+            android:persistent="false" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

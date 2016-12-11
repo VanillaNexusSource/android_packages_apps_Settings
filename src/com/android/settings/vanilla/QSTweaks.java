@@ -51,6 +51,7 @@ public class QSTweaks extends SettingsPreferenceFragment implements OnPreference
     private static final String PREF_COLUMNS = "qs_layout_columns";
     private static final String PREF_ROWS_PORTRAIT = "qs_rows_portrait";
     private static final String PREF_ROWS_LANDSCAPE = "qs_rows_landscape";
+    private static final String PREF_SYSUI_QQS_COUNT = "sysui_qqs_count_key";
     private static final String CATEGORY_WEATHER = "weather_category";
     private static final String WEATHER_ICON_PACK = "weather_icon_pack";
     private static final String DEFAULT_WEATHER_ICON_PACKAGE = "org.omnirom.omnijaws";
@@ -60,6 +61,7 @@ public class QSTweaks extends SettingsPreferenceFragment implements OnPreference
     private CustomSeekBarPreference mQsColumns;
     private CustomSeekBarPreference mRowsPortrait;
     private CustomSeekBarPreference mRowsLandscape;
+    private CustomSeekBarPreference mSysuiQqsCount;
     private ListPreference mWeatherIconPack;
     private PreferenceCategory mWeatherCategory;
 
@@ -87,6 +89,12 @@ public class QSTweaks extends SettingsPreferenceFragment implements OnPreference
                 Settings.System.QS_ROWS_LANDSCAPE, defaultValue);
         mRowsLandscape.setValue(rowsLandscape / 1);
         mRowsLandscape.setOnPreferenceChangeListener(this);
+		
+        mSysuiQqsCount = (CustomSeekBarPreference) findPreference(PREF_SYSUI_QQS_COUNT);
+        int SysuiQqsCount = Settings.Secure.getInt(getContentResolver(),
+                Settings.Secure.QQS_COUNT, 6);
+        mSysuiQqsCount.setValue(SysuiQqsCount / 1);
+        mSysuiQqsCount.setOnPreferenceChangeListener(this);
 
         mWeatherCategory = (PreferenceCategory) findPreference(CATEGORY_WEATHER);
         if (mWeatherCategory != null && !isOmniJawsServiceInstalled()) {
@@ -140,6 +148,11 @@ public class QSTweaks extends SettingsPreferenceFragment implements OnPreference
             int rowsLandscape = (Integer) objValue;
             Settings.System.putInt(getContentResolver(),
                     Settings.System.QS_ROWS_LANDSCAPE, rowsLandscape * 1);
+            return true;
+        } else if (preference == mSysuiQqsCount) {
+            int SysuiQqsCount = (Integer) objValue;
+            Settings.Secure.putInt(getContentResolver(),
+                    Settings.Secure.QQS_COUNT, SysuiQqsCount * 1);
             return true;
         } else if (preference == mWeatherIconPack) {
             String value = (String) objValue;
