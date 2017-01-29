@@ -38,4 +38,3 @@ public class StatusBarTweaks extends SettingsPreferenceFragment {
         return MetricsEvent.VANILLA;
     }
 }
-

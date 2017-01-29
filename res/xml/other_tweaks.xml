@@ -35,4 +35,9 @@
         android:title="@string/power_menu_expanded_desktop"
         android:fragment="com.android.settings.applications.ExpandedDesktopPreferenceFragment" />
 	
+    <PreferenceScreen
+        android:key="recent_tweaks"
+        android:title="@string/recent_tweaks_title"
+        android:fragment="com.android.settings.vanilla.RecentTweaks" />
+	
 </PreferenceScreen>
