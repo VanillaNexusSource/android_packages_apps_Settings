@@ -17,7 +17,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 <!-- Device Info Settings -->
     <!-- ROM version -->
-    <string name="rom_version">Flash version</string>
+    <string name="rom_version">Vanilla version</string>
     <string name="rom_version_default">Unknown</string>
     <!-- Model Name -->
     <string name="model_name">Model name</string>
