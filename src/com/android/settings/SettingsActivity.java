@@ -226,13 +226,8 @@ public class SettingsActivity extends SettingsDrawerActivity
 
     private static final int REQUEST_SUGGESTION = 42;
 
-<<<<<<< HEAD
-=======
-    private static final String SUPERSU_FRAGMENT = "com.android.settings.SuperSU";
-
     private static final String SUBSTRATUM_FRAGMENT = "com.android.settings.Substratum";
 
->>>>>>> 6b2a20e... Add Substratum dashboard tile
     private String mFragmentClass;
 
     private CharSequence mInitialTitle;
@@ -1020,15 +1015,7 @@ public class SettingsActivity extends SettingsDrawerActivity
      */
     private Fragment switchToFragment(String fragmentName, Bundle args, boolean validate,
             boolean addToBackStack, int titleResId, CharSequence title, boolean withTransition) {
-<<<<<<< HEAD
-=======
-        if (SUPERSU_FRAGMENT.equals(fragmentName)) {
-            Intent superSUIntent = new Intent();
-            superSUIntent.setClassName("eu.chainfire.supersu", "eu.chainfire.supersu.MainActivity");
-            startActivity(superSUIntent);
-            finish();
-            return null;
-        }
+
         if (SUBSTRATUM_FRAGMENT.equals(fragmentName)) {
             Intent subIntent = new Intent();
             subIntent.setClassName("projekt.substratum", "projekt.substratum.LaunchActivity");
@@ -1036,7 +1023,6 @@ public class SettingsActivity extends SettingsDrawerActivity
             finish();
             return null;
         }
->>>>>>> 6b2a20e... Add Substratum dashboard tile
         if (validate && !isValidFragment(fragmentName)) {
             throw new IllegalArgumentException("Invalid fragment for this activity: "
                     + fragmentName);
