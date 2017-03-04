@@ -18,7 +18,11 @@
         xmlns:settings="http://schemas.android.com/apk/res-auto"
         android:title="@string/about_settings">
 
-        <!-- Device status - launches activity -->
+	<!-- Vanilla Nexus Header -->
+		<PreferemceScreen android:key="vanilla_header"
+						  android:layout="@layout/vanilla_about_header" />
+     
+	<!-- Device status - launches activity -->
         <PreferenceScreen android:key="status_info"
                 android:title="@string/device_status"
                 android:summary="@string/device_status_summary"
