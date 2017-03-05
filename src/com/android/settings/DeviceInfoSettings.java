@@ -125,8 +125,6 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
             getPreferenceScreen().removePreference(findPreference(KEY_VENDOR_VERSION));
         }
         setValueSummary(KEY_BASEBAND_VERSION, "gsm.version.baseband");
-        setStringSummary(KEY_DEVICE_PROCESSOR, DeviceInfoUtils.getDeviceProcessorInfo(getActivity()));
-        setStringSummary(KEY_DEVICE_MEMORY, DeviceInfoUtils.getDeviceMemoryInfo());
         setValueSummary(KEY_EQUIPMENT_ID, PROPERTY_EQUIPMENT_ID);
         setStringSummary(KEY_DEVICE_MODEL, Build.MODEL);
         setStringSummary(KEY_DEVICE_NAME, Build.PRODUCT);
