@@ -19,7 +19,7 @@
         android:title="@string/about_settings">
 
 	<!-- Vanilla Nexus Header -->
-		<PreferemceScreen android:key="vanilla_header"
+		<PreferenceScreen android:key="vanilla_header"
 						  android:layout="@layout/vanilla_about_header" />
      
 	<!-- Device status - launches activity -->
