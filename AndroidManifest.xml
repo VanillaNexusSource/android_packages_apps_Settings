@@ -3124,6 +3124,20 @@
             android:permission="android.permission.DUMP"
             android:enabled="@bool/config_has_help" />
 
+        <!-- For OmniJaws -->
+        <activity android:name="Settings$QSTweaksActivity"
+                android:label="@string/qs_tweaks_title"
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.vanilla.QSTweaks" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@string/qs_tweaks_title" />
+        </activity>
+
         <!-- This is the longest AndroidManifest.xml ever. -->
     </application>
 </manifest>
