@@ -51,7 +51,7 @@ public class VanillaInfo extends SettingsPreferenceFragment implements Indexable
 
     @Override
     protected int getMetricsCategory() {
-return MetricsEvent.APPLICATION;
+        return MetricsEvent.APPLICATION;
 	}
 	
 	 @Override
@@ -198,5 +198,14 @@ return MetricsEvent.APPLICATION;
             m.group(2) + " " + m.group(3) + "\n" + // x@y.com #1
             m.group(4);                            // Thu Jun 28 11:02:39 PDT 2012
     }
- 
+
+    @Override
+    public boolean onPreferenceTreeClick(Preference preference) {
+        if (getPackageManager().queryIntentActivities(preference.getIntent(), 0).isEmpty()) {
+            // Don't send out the intent to stop crash & notify the user
+            Toast.makeText(getActivity(), R.string.vanilla_info_browser_error, Toast.LENGTH_SHORT).show();
+            return true;
+        }
+        return super.onPreferenceTreeClick(preference);
+    }
 }

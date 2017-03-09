@@ -66,6 +66,27 @@
                 android:summary="@string/vendor_version_default"
                 settings:allowDividerAbove="true"
                 settings:allowDividerBelow="true" />
+
+        <!-- Changelog -->
+        <PreferenceScreen
+                android:key="vanilla_changelog"
+                android:title="@string/vanilla_changelog_title"
+                android:summary="@string/vanilla_changelog_summary">
+                <intent
+                    android:action="android.intent.action.VIEW"
+                    android:data="@string/vanilla_changelog_url" />
+        </PreferenceScreen>
+
+        <!-- Telegram -->
+        <PreferenceScreen
+                android:key="vanilla_telegram"
+                android:title="@string/vanilla_telegram_title"
+                android:summary="@string/vanilla_telegram_summary">
+		        <intent
+                    android:action="android.intent.action.VIEW"
+                    android:data="@string/vanilla_telegram_url" />
+        </PreferenceScreen>
+							
 		
 	</PreferenceCategory>
 	
