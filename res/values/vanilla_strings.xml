@@ -41,5 +41,14 @@
     <string name="device_name">Device name</string>
     <!-- Phone info shortcut -->
     <string name="device_info_title">Phone info</string>
+	<!-- Vanilla Info -->
+	<string name="vanilla_info">Vanilla Info</string>
+	<string name="vanilla_info_summary">ROM info and credits</string>
+	<string name="rom_info">Rom Related Info</string>
+	<string name="vanilla_credits">Credits</string>
+	<string name="vanilla_developer">Developer of Vanilla</string>
+	<string name="vanilla_developer_name">Skye aka WelcomeToTheSkye</string>
+	<string name="vanilla_rom_homie">The rom homie</string>
+	<string name="vanilla_rom_homie_name">Nathan "Flash" Chance</string>
 </resources>
 
