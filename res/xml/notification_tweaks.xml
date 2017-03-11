@@ -23,4 +23,11 @@
             android:targetClass="com.android.systemui.tuner.PowerNotificationControlsActivity" />
     </PreferenceScreen>
 
+    <ListPreference
+        android:entries="@array/notification_mode_entries"
+        android:entryValues="@array/notification_mode_values"
+        android:key="notification_mode"
+        android:summary="%s"
+        android:title="@string/notification_mode_title" />
+
 </PreferenceScreen>

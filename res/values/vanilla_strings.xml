@@ -189,4 +189,10 @@
     <string name="show_carrier_keyguard">Lockscreen only</string>
     <string name="show_carrier_statusbar">Statusbar only</string>
     <string name="show_carrier_enabled">Lockscreen &amp; statusbar</string>
+
+    <!-- Heads up - ticker -->
+    <string name="notification_mode_title">Notifications mode</string>
+    <string name="headsup_enabled">Heads up</string>
+    <string name="ticker_enabled">Status bar notification ticker</string>
+    <string name="headsup_ticker_disabled">Heads up and ticker disabled</string>
 </resources>
