@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.dashboard.SummaryLoader;
+import com.android.settings.DevelopmentSettings;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Index;
 import com.android.settings.search.Indexable;
@@ -27,6 +28,7 @@ import com.android.settingslib.DeviceInfoUtils;
 import com.android.settingslib.RestrictedLockUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -48,6 +50,18 @@ public class VanillaInfo extends SettingsPreferenceFragment implements Indexable
 	private static final String KEY_ROM_VERSION = "rom_version";
 	private static final String KEY_VENDOR_VERSION = "vendor_version";
 
+    static final int TAPS_TO_BE_A_DEVELOPER = 7;
+
+    long[] mHits = new long[3];
+    int mDevHitCountdown;
+    Toast mDevHitToast;
+
+    private UserManager mUm;
+
+    private EnforcedAdmin mFunDisallowedAdmin;
+    private boolean mFunDisallowedBySystem;
+    private EnforcedAdmin mDebuggingFeaturesDisallowedAdmin;
+    private boolean mDebuggingFeaturesDisallowedBySystem;
 
     @Override
     protected int getMetricsCategory() {
@@ -57,10 +71,11 @@ public class VanillaInfo extends SettingsPreferenceFragment implements Indexable
 	 @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-		
-		  addPreferencesFromResource(R.xml.vanilla_info);
-	getActivity().getActionBar().setTitle("Vanilla Info");
 
+        mUm = UserManager.get(getActivity());
+
+        addPreferencesFromResource(R.xml.vanilla_info);
+        getActivity().getActionBar().setTitle("Vanilla Info");
 
         String vendorfingerprint = SystemProperties.get("ro.vendor.build.fingerprint");
         if (vendorfingerprint != null && !TextUtils.isEmpty(vendorfingerprint)) {
@@ -77,6 +92,25 @@ public class VanillaInfo extends SettingsPreferenceFragment implements Indexable
         setValueSummary(KEY_ROM_VERSION, "ro.rom.version");
         findPreference(KEY_ROM_VERSION).setEnabled(true);
 	}
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        mDevHitCountdown = getActivity().getSharedPreferences(DevelopmentSettings.PREF_FILE,
+                Context.MODE_PRIVATE).getBoolean(DevelopmentSettings.PREF_SHOW,
+                        android.os.Build.TYPE.equals("eng") || android.os.Build.TYPE.equals("userdebug")
+                        || android.os.Build.TYPE.equals("user")) ? -1 : TAPS_TO_BE_A_DEVELOPER;
+        mDevHitToast = null;
+        mFunDisallowedAdmin = RestrictedLockUtils.checkIfRestrictionEnforced(
+                getActivity(), UserManager.DISALLOW_FUN, UserHandle.myUserId());
+        mFunDisallowedBySystem = RestrictedLockUtils.hasBaseUserRestriction(
+                getActivity(), UserManager.DISALLOW_FUN, UserHandle.myUserId());
+        mDebuggingFeaturesDisallowedAdmin = RestrictedLockUtils.checkIfRestrictionEnforced(
+                getActivity(), UserManager.DISALLOW_DEBUGGING_FEATURES, UserHandle.myUserId());
+        mDebuggingFeaturesDisallowedBySystem = RestrictedLockUtils.hasBaseUserRestriction(
+                getActivity(), UserManager.DISALLOW_DEBUGGING_FEATURES, UserHandle.myUserId());
+    }
 
     private void removePreferenceIfPropertyMissing(PreferenceGroup preferenceGroup,
             String preference, String property ) {
@@ -201,7 +235,53 @@ public class VanillaInfo extends SettingsPreferenceFragment implements Indexable
 
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
-        if (getPackageManager().queryIntentActivities(preference.getIntent(), 0).isEmpty()) {
+        if (preference.getKey().equals(KEY_BUILD_NUMBER)) {
+            // Don't enable developer options for secondary users.
+            if (!mUm.isAdminUser()) return true;
+
+            // Don't enable developer options until device has been provisioned
+            if (!Utils.isDeviceProvisioned(getActivity())) {
+                return true;
+            }
+
+            if (mUm.hasUserRestriction(UserManager.DISALLOW_DEBUGGING_FEATURES)) {
+                if (mDebuggingFeaturesDisallowedAdmin != null &&
+                        !mDebuggingFeaturesDisallowedBySystem) {
+                    RestrictedLockUtils.sendShowAdminSupportDetailsIntent(getActivity(),
+                            mDebuggingFeaturesDisallowedAdmin);
+                }
+                return true;
+            }
+
+            if (mDevHitCountdown > 0) {
+                mDevHitCountdown--;
+                if (mDevHitCountdown == 0) {
+                    getActivity().getSharedPreferences(DevelopmentSettings.PREF_FILE,
+                            Context.MODE_PRIVATE).edit().putBoolean(
+                                    DevelopmentSettings.PREF_SHOW, true).apply();
+                    if (mDevHitToast != null) {
+                        mDevHitToast.cancel();
+                    }
+                    mDevHitToast = Toast.makeText(getActivity(), R.string.show_dev_on,
+                            Toast.LENGTH_LONG);
+                    mDevHitToast.show();
+                    // This is good time to index the Developer Options
+                    Index.getInstance(
+                            getActivity().getApplicationContext()).updateFromClassNameResource(
+                                    DevelopmentSettings.class.getName(), true, true);
+
+                } else if (mDevHitCountdown > 0
+                        && mDevHitCountdown < (TAPS_TO_BE_A_DEVELOPER-2)) {
+                    if (mDevHitToast != null) {
+                        mDevHitToast.cancel();
+                    }
+                    mDevHitToast = Toast.makeText(getActivity(), getResources().getQuantityString(
+                            R.plurals.show_dev_countdown, mDevHitCountdown, mDevHitCountdown),
+                            Toast.LENGTH_SHORT);
+                    mDevHitToast.show();
+                }
+            }
+        } else if (getPackageManager().queryIntentActivities(preference.getIntent(), 0).isEmpty()) {
             // Don't send out the intent to stop crash & notify the user
             Toast.makeText(getActivity(), R.string.vanilla_info_browser_error, Toast.LENGTH_SHORT).show();
             return true;
