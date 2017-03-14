@@ -34,4 +34,9 @@
         android:key="vanilla_dnd_settings"
         android:title="@string/dnd_settings_title"/>
     
+    <PreferenceScreen
+        android:fragment="com.android.settings.vanilla.OtherSettings"
+        android:key="vanilla_other_settings"
+        android:title="@string/other_settings_title"/>
+    
 </PreferenceScreen>
