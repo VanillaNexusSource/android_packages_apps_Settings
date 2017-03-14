@@ -102,5 +102,6 @@
     <string name="keywords_vanilla_tweaks">statusbar navigation bar DND other</string>
     <string name="navbar_settings_title">Navigation Bar</string>
     <string name="statusbar_settings_title">Statusbar</string>
+    <string name="dnd_settings_title">Do Not Disturb</string>
 </resources>
 

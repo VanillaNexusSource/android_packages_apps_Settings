@@ -29,4 +29,9 @@
         android:key="vanilla_navbar_settings"
         android:title="@string/navbar_settings_title"/>
 
+    <PreferenceScreen
+        android:fragment="com.android.settings.vanilla.DNDSettings"
+        android:key="vanilla_dnd_settings"
+        android:title="@string/dnd_settings_title"/>
+    
 </PreferenceScreen>
