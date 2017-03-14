@@ -35,7 +35,7 @@ public class OtherSettings extends SettingsPreferenceFragment {
 
     @Override
     protected int getMetricsCategory() {
-        return MetricsEvent.VIEW_UNKNOWN;
+        return MetricsEvent.VANILLA;
     }
 }
 

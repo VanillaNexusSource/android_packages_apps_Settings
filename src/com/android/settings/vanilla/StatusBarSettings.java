@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The Pure Nexus Project
+ * Copyright (C) 2017 VanillaNexus
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment {
 
     @Override
     protected int getMetricsCategory() {
-        return MetricsEvent.VIEW_UNKNOWN;
+        return MetricsEvent.VANILLA;
     }
 }
 

@@ -21,7 +21,7 @@ public class VanillaTweaks extends SettingsPreferenceFragment {
 
     @Override
     protected int getMetricsCategory() {
-        return MetricsEvent.TUNER;
+        return MetricsEvent.VANILLA;
     }
 
     @Override
