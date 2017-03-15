@@ -30,7 +30,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.vanilla.utils.Utils;
 
-public class NavBarDimensSettings extends SettingsPreferenceFragment implements
+public class NavBarDimensTweaks extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
     private static final String PREF_NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
@@ -44,7 +44,7 @@ public class NavBarDimensSettings extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.navbardimen_settings);
+        addPreferencesFromResource(R.xml.navbardimen_tweaks);
 
         PreferenceScreen prefSet = getPreferenceScreen();
 

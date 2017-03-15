@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The Pure Nexus Project
+ * Copyright (C) 2017 VanillaNexus
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class CarrierLabelSettings extends SettingsPreferenceFragment
+public class CarrierLabelTweaks extends SettingsPreferenceFragment
         implements OnPreferenceChangeListener {
 
     private static final String SHOW_CARRIER_LABEL = "status_bar_show_carrier";
@@ -49,7 +49,7 @@ public class CarrierLabelSettings extends SettingsPreferenceFragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.carrierlabel_settings);
+        addPreferencesFromResource(R.xml.carrierlabel_tweaks);
 
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();

@@ -24,12 +24,12 @@ import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class OtherSettings extends SettingsPreferenceFragment {
+public class OtherTweaks extends SettingsPreferenceFragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.other_settings);
+        addPreferencesFromResource(R.xml.other_tweaks);
         PreferenceScreen prefScreen = getPreferenceScreen();
     }
 

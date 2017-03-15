@@ -24,13 +24,13 @@ import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class StatusBarSettings extends SettingsPreferenceFragment {
+public class NotificationTweaks extends SettingsPreferenceFragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.statusbar_settings);
-        final PreferenceScreen prefScreen = getPreferenceScreen();
+        addPreferencesFromResource(R.xml.notification_tweaks);
+        PreferenceScreen prefScreen = getPreferenceScreen();
     }
 
     @Override

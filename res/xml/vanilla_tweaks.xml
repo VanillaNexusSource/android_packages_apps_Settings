@@ -20,23 +20,28 @@
     settings:keywords="@string/keywords_vanilla_tweaks" >
 	
     <PreferenceScreen
-        android:fragment="com.android.settings.vanilla.StatusBarSettings"
-        android:key="vanilla_statusbar_settings"
-        android:title="@string/statusbar_settings_title"/>
+        android:fragment="com.android.settings.vanilla.StatusBarTweaks"
+        android:key="vanilla_statusbar_tweaks"
+        android:title="@string/statusbar_tweaks_title"/>
     
     <PreferenceScreen
-        android:fragment="com.android.settings.vanilla.NavBarSettings"
-        android:key="vanilla_navbar_settings"
-        android:title="@string/navbar_settings_title"/>
+        android:fragment="com.android.settings.vanilla.DNDTweaks"
+        android:key="vanilla_dnd_tweaks"
+        android:title="@string/dnd_tweaks_title"/>
+    
+    <PreferenceScreen
+        android:fragment="com.android.settings.vanilla.NotificationTweaks"
+        android:key="vanilla_notification_tweaks"
+        android:title="@string/notification_tweaks_title"/>
+    
+    <PreferenceScreen
+        android:fragment="com.android.settings.vanilla.NavBarTweaks"
+        android:key="vanilla_navbar_tweaks"
+        android:title="@string/navbar_tweaks_title"/>
+	
+    <PreferenceScreen
+        android:fragment="com.android.settings.vanilla.OtherTweaks"
+        android:key="vanilla_other_tweaks"
+        android:title="@string/other_tweaks_title"/>
 
-    <PreferenceScreen
-        android:fragment="com.android.settings.vanilla.DNDSettings"
-        android:key="vanilla_dnd_settings"
-        android:title="@string/dnd_settings_title"/>
-    
-    <PreferenceScreen
-        android:fragment="com.android.settings.vanilla.OtherSettings"
-        android:key="vanilla_other_settings"
-        android:title="@string/other_settings_title"/>
-    
 </PreferenceScreen>

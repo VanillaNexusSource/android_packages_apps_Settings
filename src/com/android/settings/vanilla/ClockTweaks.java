@@ -39,7 +39,7 @@ import com.android.internal.logging.MetricsProto.MetricsEvent;
 
 import java.util.Date;
 
-public class ClockSettings extends SettingsPreferenceFragment
+public class ClockTweaks extends SettingsPreferenceFragment
         implements OnPreferenceChangeListener {
 
     private static final String PREF_CLOCK_STYLE = "clock_style";
@@ -79,7 +79,7 @@ public class ClockSettings extends SettingsPreferenceFragment
             prefSet.removeAll();
         }
 
-        addPreferencesFromResource(R.xml.clock_settings);
+        addPreferencesFromResource(R.xml.clock_tweaks);
         prefSet = getPreferenceScreen();
 
         PackageManager pm = getPackageManager();
