@@ -1,4 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+s<manifest xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:androidprv="http://schemas.android.com/apk/prv/res/android"
         package="com.android.settings"
         coreApp="true"
@@ -2759,6 +2759,8 @@
                 android:value="com.android.settings.category.system" />
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.vanilla.VanillaTweaks" />
+            <meta-data android:name="com.android.settings.summary"
+                android:resource="@string/vanilla_tweaks_summary" />
         </activity>
 
         <receiver android:name=".widget.SettingsAppWidgetProvider"
