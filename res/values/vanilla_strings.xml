@@ -99,7 +99,8 @@
 	
     <!-- Vanilla Tweaks -->
     <string name="vanilla_tweaks_title">Vanilla Tweaks</string>
-    <string name="keywords_vanilla_tweaks">statusbar navigation bar DND other</string>
+    <string name="vanilla_tweaks_summary">Make Vanilla Less Vanilla</string>
+    <string name="keywords_vanilla_tweaks">statusbar, tweaks, carrier label, clock, battery, do not disturb, dnd, notification, navigation, nav, other, vanilla</string>
 	
     <!-- General strings -->
     <string name="cancel">Cancel</string>
@@ -111,6 +112,7 @@
     <string name="dnd_tweaks_title">Do Not Disturb Tweaks</string>
     <string name="notification_tweaks_title">Notification Tweaks</string>
     <string name="other_tweaks_title">Other Tweaks</string>
+    <string name="other_tweaks_summary">Nothing to see here</string>
 	
     <!-- Nav Bar Tweaks-->
     <string name="navbar_tuner_title">Navigation bar tuner</string>

@@ -17,7 +17,8 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/vanilla_tweaks_title"
-    settings:keywords="@string/keywords_vanilla_tweaks" >
+    android:summary="@string/vanilla_tweaks_summary" 
+    settings:keywords="@string/keywords_vanilla_tweaks">
 	
     <PreferenceScreen
         android:fragment="com.android.settings.vanilla.StatusBarTweaks"
@@ -28,12 +29,12 @@
         android:fragment="com.android.settings.vanilla.DNDTweaks"
         android:key="vanilla_dnd_tweaks"
         android:title="@string/dnd_tweaks_title"/>
-    
+	
     <PreferenceScreen
         android:fragment="com.android.settings.vanilla.NotificationTweaks"
         android:key="vanilla_notification_tweaks"
         android:title="@string/notification_tweaks_title"/>
-    
+	
     <PreferenceScreen
         android:fragment="com.android.settings.vanilla.NavBarTweaks"
         android:key="vanilla_navbar_tweaks"
@@ -42,6 +43,7 @@
     <PreferenceScreen
         android:fragment="com.android.settings.vanilla.OtherTweaks"
         android:key="vanilla_other_tweaks"
-        android:title="@string/other_tweaks_title"/>
-
+        android:title="@string/other_tweaks_title"
+        android:summary="@string/other_tweaks_summary"/>
+	
 </PreferenceScreen>
