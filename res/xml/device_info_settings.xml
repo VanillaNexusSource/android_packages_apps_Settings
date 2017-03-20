@@ -20,7 +20,10 @@
 
 	    <!-- Vanilla Nexus Header -->
 		<PreferenceScreen android:key="vanilla_header"
-				android:layout="@layout/vanilla_about_header" />
+                android:layout="@layout/vanilla_about_header"
+                android:enabled="false"
+                android:shouldDisableView="false"
+                android:selectable="false"/>
 	
 	    <!-- Vanilla Info -->
 		<PreferenceScreen 
