@@ -12,6 +12,7 @@ import android.os.UserManager;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceGroup;
 import android.text.TextUtils;
 import android.util.Log;
@@ -43,12 +44,13 @@ import java.util.regex.Pattern;
 import static com.android.settingslib.RestrictedLockUtils.EnforcedAdmin;
 
 public class VanillaInfo extends SettingsPreferenceFragment implements Indexable {
-	private static final String LOG_TAG = "VanillaInfo";
+    private static final String LOG_TAG = "VanillaInfo";
     private static final String FILENAME_PROC_VERSION = "/proc/version";
-	private static final String KEY_KERNEL_VERSION = "kernel_version";
-	private static final String KEY_BUILD_NUMBER = "build_number";
-	private static final String KEY_ROM_VERSION = "rom_version";
-	private static final String KEY_VENDOR_VERSION = "vendor_version";
+    private static final String KEY_KERNEL_VERSION = "kernel_version";
+    private static final String KEY_BUILD_NUMBER = "build_number";
+    private static final String KEY_ROM_VERSION = "rom_version";
+    private static final String KEY_VENDOR_VERSION = "vendor_version";
+    private static final String CAT_ROM_INFO = "rom_info";
 
     static final int TAPS_TO_BE_A_DEVELOPER = 7;
 
@@ -68,7 +70,7 @@ public class VanillaInfo extends SettingsPreferenceFragment implements Indexable
         return MetricsEvent.APPLICATION;
 	}
 	
-	 @Override
+    @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
@@ -78,12 +80,14 @@ public class VanillaInfo extends SettingsPreferenceFragment implements Indexable
         getActivity().getActionBar().setTitle("Vanilla Info");
 
         String vendorfingerprint = SystemProperties.get("ro.vendor.build.fingerprint");
+        Log.d(LOG_TAG, "vendorfingerprint was read as " + vendorfingerprint);
         if (vendorfingerprint != null && !TextUtils.isEmpty(vendorfingerprint)) {
             String[] splitfingerprint = vendorfingerprint.split("/");
             String vendorid = splitfingerprint[3];
             setStringSummary(KEY_VENDOR_VERSION, vendorid);
         } else {
-            getPreferenceScreen().removePreference(findPreference(KEY_VENDOR_VERSION));
+            PreferenceCategory romInfoCat = (PreferenceCategory) findPreference(CAT_ROM_INFO);
+            romInfoCat.removePreference(findPreference(KEY_VENDOR_VERSION));
         }
         setStringSummary(KEY_BUILD_NUMBER, Build.DISPLAY);
         findPreference(KEY_BUILD_NUMBER).setEnabled(true);
@@ -91,7 +95,7 @@ public class VanillaInfo extends SettingsPreferenceFragment implements Indexable
         findPreference(KEY_KERNEL_VERSION).setEnabled(true);
         setValueSummary(KEY_ROM_VERSION, "ro.rom.version");
         findPreference(KEY_ROM_VERSION).setEnabled(true);
-	}
+    }
 
     @Override
     public void onResume() {
