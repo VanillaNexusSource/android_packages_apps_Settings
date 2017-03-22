@@ -114,7 +114,6 @@
     <!-- Categories -->
     <string name="navbar_tweaks_title">Navigation Bar Tweaks</string>
     <string name="statusbar_tweaks_title">Statusbar Tweaks</string>
-    <string name="dnd_tweaks_title">Do Not Disturb Tweaks</string>
     <string name="notification_tweaks_title">Notification Tweaks</string>
     <string name="qs_tweaks_title">Quick Settings Tweaks</string>
     <string name="other_tweaks_title">Other Tweaks</string>

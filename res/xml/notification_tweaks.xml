@@ -29,5 +29,17 @@
         android:key="notification_mode"
         android:summary="%s"
         android:title="@string/notification_mode_title" />
+	
+    <com.android.settings.preference.SystemSettingSwitchPreference
+        android:key="sysui_volume_up_silent"
+        android:title="@string/volbtn_up_zen_title"
+        android:summary="@string/volbtn_up_zen_summary"
+        android:defaultValue="true" />
+
+    <com.android.settings.preference.SystemSettingSwitchPreference
+        android:key="sysui_show_full_zen"
+        android:title="@string/vol_zen_title"
+        android:summary="@string/vol_zen_summary"
+        android:defaultValue="false"/>
 
 </PreferenceScreen>

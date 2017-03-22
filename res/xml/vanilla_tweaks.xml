@@ -34,12 +34,6 @@
         android:fragment="com.android.settings.vanilla.NotificationTweaks"
         android:key="vanilla_notification_tweaks"
         android:title="@string/notification_tweaks_title"/>
-
-    <!-- Soon to be moved into notificaation tweaks--->
-    <PreferenceScreen
-        android:fragment="com.android.settings.vanilla.DNDTweaks"
-        android:key="vanilla_dnd_tweaks"
-        android:title="@string/dnd_tweaks_title"/>
 	
     <PreferenceScreen
         android:fragment="com.android.settings.vanilla.NavBarTweaks"
