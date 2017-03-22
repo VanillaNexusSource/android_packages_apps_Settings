@@ -24,27 +24,29 @@
         android:fragment="com.android.settings.vanilla.StatusBarTweaks"
         android:key="vanilla_statusbar_tweaks"
         android:title="@string/statusbar_tweaks_title"/>
-    
+	
     <PreferenceScreen
         android:fragment="com.android.settings.vanilla.QSTweaks"
         android:key="vanilla_qs_tweaks"
         android:title="@string/qs_tweaks_title"/>
 
     <PreferenceScreen
-        android:fragment="com.android.settings.vanilla.DNDTweaks"
-        android:key="vanilla_dnd_tweaks"
-        android:title="@string/dnd_tweaks_title"/>
-	
-    <PreferenceScreen
         android:fragment="com.android.settings.vanilla.NotificationTweaks"
         android:key="vanilla_notification_tweaks"
         android:title="@string/notification_tweaks_title"/>
+
+    <!-- Soon to be moved into notificaation tweaks--->
+    <PreferenceScreen
+        android:fragment="com.android.settings.vanilla.DNDTweaks"
+        android:key="vanilla_dnd_tweaks"
+        android:title="@string/dnd_tweaks_title"/>
 	
     <PreferenceScreen
         android:fragment="com.android.settings.vanilla.NavBarTweaks"
         android:key="vanilla_navbar_tweaks"
         android:title="@string/navbar_tweaks_title"/>
 	
+	<!-- Other Tweaks is always last -->
     <PreferenceScreen
         android:fragment="com.android.settings.vanilla.OtherTweaks"
         android:key="vanilla_other_tweaks"
