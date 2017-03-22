@@ -17,22 +17,22 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">	    
 
     <PreferenceScreen
-        android:fragment="com.android.settings.vanilla.BatterySettings"
-        android:key="vanilla_battery_settings"
-        android:title="@string/battery_settings_title"
-        android:summary="@string/battery_settings_summary" />
+        android:fragment="com.android.settings.vanilla.BatteryTweaks"
+        android:key="vanilla_battery_tweaks"
+        android:title="@string/battery_tweaks_title"
+        android:summary="@string/battery_tweaks_summary" />
 
     <PreferenceScreen
         android:fragment="com.android.settings.vanilla.CarrierLabelTweaks"
-        android:key="vanilla_carrier_label_settings"
-        android:title="@string/carrier_label_settings_title"
-        android:summary="@string/carrier_label_settings_summary" />
+        android:key="vanilla_carrier_label_tweaks"
+        android:title="@string/carrier_label_tweaks_title"
+        android:summary="@string/carrier_label_tweaks_summary" />
 
     <PreferenceScreen
         android:fragment="com.android.settings.vanilla.ClockTweaks"
-        android:key="vanilla_clock_settings"
-        android:title="@string/clock_settings_title"
-        android:summary="@string/clock_settings_summary" />
+        android:key="vanilla_clock_tweaks"
+        android:title="@string/clock_tweaks_title"
+        android:summary="@string/clock_tweaks_summary" />
 
     <PreferenceScreen
         android:title="@string/status_bar_icon_tweaks_title"

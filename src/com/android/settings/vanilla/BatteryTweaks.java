@@ -27,7 +27,7 @@ import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class BatterySettings extends SettingsPreferenceFragment
+public class BatteryTweaks extends SettingsPreferenceFragment
         implements OnPreferenceChangeListener {
 
     private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
@@ -42,7 +42,7 @@ public class BatterySettings extends SettingsPreferenceFragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.battery_settings);
+        addPreferencesFromResource(R.xml.battery_tweaks);
 
         ContentResolver resolver = getActivity().getContentResolver();
 
