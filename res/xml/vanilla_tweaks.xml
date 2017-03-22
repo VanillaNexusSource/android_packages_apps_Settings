@@ -26,6 +26,11 @@
         android:title="@string/statusbar_tweaks_title"/>
     
     <PreferenceScreen
+        android:fragment="com.android.settings.vanilla.QSTweaks"
+        android:key="vanilla_qs_tweaks"
+        android:title="@string/qs_tweaks_title"/>
+
+    <PreferenceScreen
         android:fragment="com.android.settings.vanilla.DNDTweaks"
         android:key="vanilla_dnd_tweaks"
         android:title="@string/dnd_tweaks_title"/>
@@ -44,5 +49,5 @@
         android:fragment="com.android.settings.vanilla.OtherTweaks"
         android:key="vanilla_other_tweaks"
         android:title="@string/other_tweaks_title"/>
-	
+
 </PreferenceScreen>
