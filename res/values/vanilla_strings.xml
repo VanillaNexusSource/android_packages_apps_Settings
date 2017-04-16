@@ -52,14 +52,14 @@
     <string name="rom_info">ROM Related Info</string>
     <string name="vanilla_changelog_title">Changelog</string>
     <string name="vanilla_changelog_summary">See the latest ROM changes</string>
-    <string name="vanilla_changelog_url">https://github.com/VanillaNexusSource/Vanilla_Changelog/blob/master/Changelog.md</string>
+    <string name="vanilla_changelog_url">https://github.com/VanillaNexusSource/Vanilla_Changelog/blob/7.1.2/Changelog.md</string>
     <string name="vanilla_telegram_title">Telegram</string>
     <string name="vanilla_telegram_summary">Join our Telegram group</string>
     <string name="vanilla_telegram_url">https://t.me/joinchat/AAAAAEI7sCY9wIBIScrOdQ</string>
     <string name="vanilla_info_browser_error">No app found! Make sure you have a Browser installed.</string>
     <string name="vanilla_credits">Credits</string>
     <string name="vanilla_developer">Developer of Vanilla</string>
-    <string name="vanilla_developer_name">Skye aka WelcomeToTheSkye</string>
+    <string name="vanilla_developer_name">Skye Jessica aka WelcomeToTheSkye</string>
     <string name="vanilla_rom_homie">The ROM Homie</string>
     <string name="vanilla_rom_homie_name">Nathan Chancellor aka The Flash</string>
 
