@@ -26,10 +26,6 @@
     <string name="show_dev_already_enabled">No Need, Development settings are enabled by default.</string>
 
 <!-- Device Info Settings -->
-    <!-- ROM version -->
-    <string name="rom_version">Vanilla version</string>
-    <string name="rom_version_default">Unknown</string>
-	
     <!-- Vendor version -->
     <string name="vendor_version">Vendor version</string>
     <string name="vendor_version_default">Unknown</string>
@@ -49,6 +45,8 @@
     <!-- Vanilla Info -->
     <string name="vanilla_info">Vanilla Info</string>
     <string name="vanilla_info_summary">ROM info and credits</string>
+    <string name="vanilla_version">Vanilla version</string>
+    <string name="vanilla_version_default">Unknown</string>
     <string name="rom_info">ROM Related Info</string>
     <string name="vanilla_changelog_title">Changelog</string>
     <string name="vanilla_changelog_summary">See the latest ROM changes</string>

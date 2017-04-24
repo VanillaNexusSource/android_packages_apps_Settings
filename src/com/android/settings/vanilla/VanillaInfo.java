@@ -48,7 +48,7 @@ public class VanillaInfo extends SettingsPreferenceFragment implements Indexable
     private static final String FILENAME_PROC_VERSION = "/proc/version";
     private static final String KEY_KERNEL_VERSION = "kernel_version";
     private static final String KEY_BUILD_NUMBER = "build_number";
-    private static final String KEY_ROM_VERSION = "rom_version";
+    private static final String KEY_VANILLA_VERSION = "vanilla_version";
     private static final String KEY_VENDOR_VERSION = "vendor_version";
     private static final String CAT_ROM_INFO = "rom_info";
 
@@ -93,8 +93,8 @@ public class VanillaInfo extends SettingsPreferenceFragment implements Indexable
         findPreference(KEY_BUILD_NUMBER).setEnabled(true);
         setStringSummary(KEY_KERNEL_VERSION, getFormattedKernelVersion());
         findPreference(KEY_KERNEL_VERSION).setEnabled(true);
-        setValueSummary(KEY_ROM_VERSION, "ro.rom.version");
-        findPreference(KEY_ROM_VERSION).setEnabled(true);
+        setValueSummary(KEY_VANILLA_VERSION, "ro.vanilla.version");
+        findPreference(KEY_VANILLA_VERSION).setEnabled(true);
     }
 
     @Override

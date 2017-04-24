@@ -23,14 +23,14 @@
         android:key="rom_info"
         android:title="@string/rom_info">
 	
-        <!-- ROM version -->
+        <!-- Vanilla version -->
         <com.android.settings.DividerPreference
-                android:key="rom_version"
+                android:key="vanilla_version"
                 android:enabled="false"
                 android:shouldDisableView="false"
                 android:selectable="false"
-                android:title="@string/rom_version"
-                android:summary="@string/rom_version_default"
+                android:title="@string/vanilla_version"
+                android:summary="@string/vanilla_version_default"
                 settings:allowDividerAbove="true"
                 settings:allowDividerBelow="true" />	
 		
