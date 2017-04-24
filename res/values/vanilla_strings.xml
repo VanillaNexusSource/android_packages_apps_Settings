@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-<!-- Custom Settings -->    
+<!-- Vanilla Settings -->    
   <!-- Dashboard -->
     <string name="header_category_custom">Themes</string>
     <string name="substratum_title">Substratum</string>
@@ -44,12 +44,12 @@
 	
     <!-- Vanilla Info -->
     <string name="vanilla_info">Vanilla Info</string>
-    <string name="vanilla_info_summary">ROM info and credits</string>
+    <string name="vanilla_info_summary">Vanilla info and credits</string>
     <string name="vanilla_version">Vanilla version</string>
     <string name="vanilla_version_default">Unknown</string>
-    <string name="rom_info">ROM Related Info</string>
+    <string name="vanilla_info_category">Vanilla Related Info</string>
     <string name="vanilla_changelog_title">Changelog</string>
-    <string name="vanilla_changelog_summary">See the latest ROM changes</string>
+    <string name="vanilla_changelog_summary">See the latest changes in Vanilla</string>
     <string name="vanilla_changelog_url">https://github.com/VanillaNexusSource/Vanilla_Changelog/blob/7.1.2/Changelog.md</string>
     <string name="vanilla_telegram_title">Telegram</string>
     <string name="vanilla_telegram_summary">Join our Telegram group</string>

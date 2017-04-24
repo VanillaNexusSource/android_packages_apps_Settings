@@ -50,7 +50,7 @@ public class VanillaInfo extends SettingsPreferenceFragment implements Indexable
     private static final String KEY_BUILD_NUMBER = "build_number";
     private static final String KEY_VANILLA_VERSION = "vanilla_version";
     private static final String KEY_VENDOR_VERSION = "vendor_version";
-    private static final String CAT_ROM_INFO = "rom_info";
+    private static final String CAT_ROM_INFO = "vanilla_info_category";
 
     static final int TAPS_TO_BE_A_DEVELOPER = 7;
 

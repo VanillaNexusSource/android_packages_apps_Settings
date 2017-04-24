@@ -20,8 +20,8 @@
     android:title="@string/vanilla_info">
      
 	<PreferenceCategory
-        android:key="rom_info"
-        android:title="@string/rom_info">
+        android:key="vanilla_info_category"
+        android:title="@string/vanilla_info_category">
 	
         <!-- Vanilla version -->
         <com.android.settings.DividerPreference
