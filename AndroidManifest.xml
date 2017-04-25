@@ -2741,6 +2741,27 @@
             <meta-data android:name="com.android.settings.summary"
                 android:resource="@string/substratum_summary" />
         </activity>
+        
+        <activity android:name="Settings$MusicFXActivity"
+            android:label="@string/musicfx_title"
+            android:icon="@drawable/ic_settings_musicfx"
+            android:taskAffinity="">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.VOICE_LAUNCH" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+            <intent-filter android:priority="3">
+                <action android:name="com.android.settings.action.SETTINGS" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.category"
+                android:value="com.android.settings.category.custom" />
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.MusicFX" />
+            <meta-data android:name="com.android.settings.summary"
+                android:resource="@string/musicfx_summary" />
+        </activity>
 
         <!-- Vanilla Tweaks -->
         <activity android:name="Settings$VanillaTweaksActivity"

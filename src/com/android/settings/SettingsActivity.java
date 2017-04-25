@@ -230,6 +230,8 @@ public class SettingsActivity extends SettingsDrawerActivity
     private static final int REQUEST_SUGGESTION = 42;
 
     private static final String SUBSTRATUM_FRAGMENT = "com.android.settings.Substratum";
+            
+    private static final String MUSICFX_FRAGMENT = "com.android.settings.MusicFX";
 
     private String mFragmentClass;
 
@@ -1026,6 +1028,13 @@ public class SettingsActivity extends SettingsDrawerActivity
         if (SUBSTRATUM_FRAGMENT.equals(fragmentName)) {
             Intent subIntent = new Intent();
             subIntent.setClassName("projekt.substratum", "projekt.substratum.LaunchActivity");
+            startActivity(subIntent);
+            finish();
+            return null;
+        }
+        if (MUSICFX_FRAGMENT.equals(fragmentName)) {
+            Intent subIntent = new Intent();
+            subIntent.setClassName("com.android.musicfx", "com.android.musicfx.ActivityMusic");
             startActivity(subIntent);
             finish();
             return null;
