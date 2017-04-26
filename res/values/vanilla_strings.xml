@@ -20,7 +20,7 @@
   <!-- Dashboard -->
     <string name="header_category_custom">Themes</string>
     <string name="substratum_title">Substratum</string>
-    <string name="substratum_summary">Theme your device</string>
+    <string name="substratum_summary">Make your device look dope.</string>
     <string name="musicfx_title">Equalizer</string>
     <string name="musicfx_summary">Make your device sound dope.</string>
 <!-- Development Settings -->
