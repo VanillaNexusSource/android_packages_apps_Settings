@@ -2766,7 +2766,7 @@
         <!-- Vanilla Tweaks -->
         <activity android:name="Settings$VanillaTweaksActivity"
                 android:label="@string/vanilla_tweaks_title"
-                android:icon="@drawable/ic_settings_more"
+                android:icon="@drawable/ic_settings_vanilla"
                 android:taskAffinity="">
             <intent-filter android:priority="5">
                 <action android:name="com.android.settings.VANILLA_TWEAKS" />
