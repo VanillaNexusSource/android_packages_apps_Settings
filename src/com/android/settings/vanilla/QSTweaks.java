@@ -61,7 +61,9 @@ public class QSTweaks extends SettingsPreferenceFragment implements OnPreference
     private static final String DEFAULT_HEADER_PACKAGE = "com.android.systemui";
     private static final String CUSTOM_HEADER_IMAGE_SHADOW = "status_bar_custom_header_shadow";
     private static final String CUSTOM_HEADER_PROVIDER = "custom_header_provider";
+    /*
     private static final String CUSTOM_HEADER_BROWSE = "custom_header_browse";
+    */
 
     private CustomSeekBarPreference mQsColumns;
     private CustomSeekBarPreference mRowsPortrait;
@@ -71,9 +73,12 @@ public class QSTweaks extends SettingsPreferenceFragment implements OnPreference
     private ListPreference mDaylightHeaderPack;
     private ListPreference mHeaderProvider;
     private ListPreference mWeatherIconPack;
-    private PreferenceScreen mHeaderBrowse;
     private String mDaylightHeaderProvider;
     private PreferenceCategory mWeatherCategory;
+    /*
+    private PreferenceScreen mHeaderBrowse;
+    */
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -178,9 +183,11 @@ public class QSTweaks extends SettingsPreferenceFragment implements OnPreference
         mHeaderProvider.setSummary(mHeaderProvider.getEntry());
         mHeaderProvider.setOnPreferenceChangeListener(this);
         mDaylightHeaderPack.setEnabled(providerName.equals(mDaylightHeaderProvider));
-
+        
+        /*
         mHeaderBrowse = (PreferenceScreen) findPreference(CUSTOM_HEADER_BROWSE);
         mHeaderBrowse.setEnabled(isBrowseHeaderAvailable());
+        */
     }
 
     @Override
@@ -324,12 +331,13 @@ public class QSTweaks extends SettingsPreferenceFragment implements OnPreference
             entries.add(label);
         }
     }
-
+   /*
     private boolean isBrowseHeaderAvailable() {
         PackageManager pm = getPackageManager();
         Intent browse = new Intent();
         browse.setClassName("org.omnirom.omnistyle", "org.omnirom.omnistyle.BrowseHeaderActivity");
         return pm.resolveActivity(browse, 0) != null;
+        
     }
-    
+    */
 }
